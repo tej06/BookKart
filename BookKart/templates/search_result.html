@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>BookKart</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="../static/js/jquery-1.11.2.js"></script>
+    <script src="../static/js/search.js"></script>
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation"><a href={{ url_for('index') }}>Home</a>
+                    </li>
+                    <li role="presentation"><a href={{ url_for('add_book') }}>Add Book</a>
+                    </li>
+                    <li role="presentation"><a href={{ url_for('showSignIn') }}>Sign In</a>
+                    </li>
+                    <li role="presentation"><a href={{ url_for('showSignUp') }}>Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="text-muted">BookKart</h1>
+        </div>
+ 
+        <div class="blog">
+            {% if not data_array %}
+                <h3>Book not found!</h3>
+            {% else %}
+                <h2>Search results</h2>
+                <ul class="list-group">
+                    {% for datastr in data_array %}
+                        {% if not datastr[3] == 0 %} 
+                        <li class="list-group-item">
+                            <h3> {{ datastr[0] }} </h3>
+                            <br>
+                            Author: {{ datastr[1] }}
+                            <button type="submit" class="btn btn-lg btn-success" id="btnbuy" onclick="location.href='/success'">Buy</button>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+            {% endif %}
+
+            </ol>
+        </div>
+ 
+</body>
+ 
+</html>

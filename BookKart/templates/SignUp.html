@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+ 
+    
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    
+  </head>
+ 
+  <body>
+ 
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            		<li role="presentation"><a href={{ url_for('index') }}>Home</a>
+                    </li>
+                    <li role="presentation"><a href={{ url_for('add_book') }}>Add Book</a>
+                    </li>
+                    <li role="presentation"><a href={{ url_for('showSignIn') }}>Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="#">Sign Up</a>
+                    </li>
+          </ul>
+        </nav>
+        <h1 class="text-muted">BookKart</h1>
+      </div>
+ 
+      <div class="jumbotron">
+        <h3>Sign Up</h3>
+        <form class="form-signin">
+        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus><br>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required><br>
+         
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+      </form>
+  </body>
+</html>
